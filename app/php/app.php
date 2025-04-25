@@ -32,7 +32,7 @@ $options = getopt('a:b:');
 if ($options['a'] === 'warning') {
     $log->warning('Esto es un nuevo Warning', ['Servidor' => 'Servidor A']);
 } else {
-    $log->info('Esto es un Info', ['Servidor' => 'Servidor A']);
+    $log->info('biba', ['Servidor' => 'Servidor A']);
 }
 
 # App Servidor B

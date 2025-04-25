@@ -21,9 +21,18 @@ services:
     volumes:
       - './app/php:/app'
       - './volumes/php/vendor:/app/vendor'
-      - './volumes/logstash/logs:/app/logs'
+      - './volumes/logstash/logs/php:/app/logs'
     depends_on:
-      - elasticsearch
+      - logstash
+
+  java:
+    image: gradle:8.13.0-jdk8-corretto
+    volumes:
+      - './app/java:/app'
+      - './volumes/logstash/logs/java:/var/logs'
+    entrypoint: [ "tail", "-f", "/dev/null" ]
+    depends_on:
+      - logstash
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.1.0

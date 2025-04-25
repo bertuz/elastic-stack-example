@@ -19,10 +19,10 @@ curl --location --request GET 'http://localhost:9200/' \
 
 
 ## How to run PHP sample app
-No local setup is eneded: the php docker-compose service can be used. Access it and install the needed PHP dependencies
+No local setup is needed: the php docker-compose service can be used. Access it and install the needed PHP dependencies
 
 ```
-docker-compose exec php
+docker-compose exec php bash
 ```  
 
 inside the docker install the dependencies:
@@ -34,3 +34,14 @@ Execute the PHP sample application within the docker:
 ```
 php app.php -a fo1 -b bar
 ```
+
+## How to run Java sample app
+No local setup is needed: the java docker-compose service can be used. Access it and go to the `/app` folder
+
+```
+docker-compose exec java bash
+cd /app
+./gradlew test
+```  
+
+logs will be generated in the logstash shared volume `./volume/logstash/logs/java` folder. 
