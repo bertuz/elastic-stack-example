@@ -35,7 +35,9 @@ services:
       - logstash
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.1.0
+    build:
+      context: ./dev/logstash
+      dockerfile: Dockerfile
     container_name: logstash
     env_file:
       - path: ./env/.env

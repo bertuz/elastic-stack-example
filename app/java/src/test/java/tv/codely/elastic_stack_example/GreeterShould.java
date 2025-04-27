@@ -12,10 +12,10 @@ public class GreeterShould {
 	void greet_with_a_hello_message_to_the_name_it_receives() {
 
 		Logger logger = LogManager.getLogger(GreeterShould.class);
-		RuntimeException error = new RuntimeException("exceptioooon");
+		RuntimeException error = new RuntimeException("exception");
 		logger.error("Hello error world!", error);
 
 		Greeter greeter = new Greeter();
-		assertEquals("Hello Jhon", greeter.greet("Jhon"));
+		assertEquals("Hello John", greeter.greet("John"));
 	}
 }
